@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {CountryElement} from "../../country-element-interface";
-
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-search-autocomplete',
@@ -8,15 +6,17 @@ import {CountryElement} from "../../country-element-interface";
   styleUrls: ['./search-autocomplete.component.scss']
 })
 export class SearchAutocompleteComponent implements OnInit {
-  filteredCountries: CountryElement[] = [];
+  @Input() inputValue!: string;
+  @Input() filteredCountries!: any[];
+  @Output() newTabGoogle = new EventEmitter;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
   onSelectAutoCompleteElements(labelElement: string): void{
     this.inputValue = labelElement;
-    this.redirectToGoogle()
+    this.newTabGoogle.emit(labelElement);
   }
-
 }

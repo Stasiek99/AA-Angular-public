@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-search-input',
@@ -6,7 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent implements OnInit {
-  @Input() inputValue: string = '';
+  @Input() inputValue!: string;
+  @Input() allCountries!: any[];
+  @Input() filteredCountries!: any[];
+  @Output() newTabGoogle = new EventEmitter;
 
   constructor() { }
 
@@ -16,7 +19,12 @@ export class SearchInputComponent implements OnInit {
     this.filteredCountries = this.getFilteredCountries(searchString);
   }
 
-  onSubmit(): void{
-    this.redirectToGoogle();
+  onSubmit(searchString: string): void{
+    this.newTabGoogle.emit(searchString);
   }
+
+  private getFilteredCountries(searchString: string){
+    return this.allCountries.filter(elem => elem.name.toLowerCase().includes(searchString.toLowerCase()));
+  }
+
 }
