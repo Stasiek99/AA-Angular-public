@@ -7,16 +7,14 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class SearchAutocompleteComponent implements OnInit {
   @Input() inputValue!: string;
-  @Input() filteredCountries!: any[];
-  @Output() newTabGoogle = new EventEmitter;
+  @Input() filteredCountries!: any;
+  @Output() autoComplete = new EventEmitter<string>();
 
   constructor() { }
-
   ngOnInit(): void {
   }
 
-  onSelectAutoCompleteElements(labelElement: string): void{
-    this.inputValue = labelElement;
-    this.newTabGoogle.emit(labelElement);
+  onSelectAutoCompleteElements(searchString: string): void{
+    this.autoComplete.emit(searchString);
   }
 }

@@ -7,24 +7,21 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class SearchInputComponent implements OnInit {
   @Input() inputValue!: string;
-  @Input() allCountries!: any[];
-  @Input() filteredCountries!: any[];
-  @Output() newTabGoogle = new EventEmitter;
+  @Input() filteredCountries!: any;
+  @Output() searchBarChanged = new EventEmitter<string>();
+  @Output() submit = new EventEmitter<any>();
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-  onChangesSearchBarInput(searchString: string){
-    this.filteredCountries = this.getFilteredCountries(searchString);
+  constructor() {
   }
 
-  onSubmit(searchString: string): void{
-    this.newTabGoogle.emit(searchString);
+  ngOnInit(){
   }
 
-  private getFilteredCountries(searchString: string){
-    return this.allCountries.filter(elem => elem.name.toLowerCase().includes(searchString.toLowerCase()));
+  onChangesSearchBarInput(searchString: string) {
+    this.searchBarChanged.emit(searchString);
   }
 
+  onSubmit(): void{
+    this.submit.emit();
+  }
 }
