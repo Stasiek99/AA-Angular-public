@@ -25,3 +25,4 @@ export class SearchInputComponent implements OnInit {
     this.submit.emit();
   }
 }
+////////////////////////
