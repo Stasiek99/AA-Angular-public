@@ -38,6 +38,7 @@ export class CountrySearchEngineComponent implements OnInit {
   }
 
   onSearchBarInputChanged(searchString: string ){
+    this.inputValue = searchString;
     this.filteredCountries = this.getFilteredCountries(searchString);
   }
 
