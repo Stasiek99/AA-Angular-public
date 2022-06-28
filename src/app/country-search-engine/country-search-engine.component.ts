@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {CountryDataService} from "../country-data.service";
-import {CountryElement} from "../country-element-interface";
+import {CountryDataService} from "./services/country-data.service";
+import {CountryElement} from "./interfaces/country-element-interface";
 
 @Component({
   selector: 'app-country-search-engine',
