@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
 
-import {HeaderComponent} from "../country-search-engine/components/header/header.component";
-import {FooterComponent} from "../country-search-engine/components/footer/footer.component";
+import {HeaderComponent} from "./components/header/header.component";
+import {FooterComponent} from "./components/footer/footer.component";
 import {AppComponent} from "../app.component";
 
 @NgModule({

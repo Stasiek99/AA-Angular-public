@@ -13,7 +13,7 @@ import {AppComponent} from "../app.component";
   declarations: [
     CountrySearchEngineComponent,
     SearchInputComponent,
-    SearchAutocompleteComponent
+    SearchAutocompleteComponent,
   ],
   exports: [
     CountrySearchEngineComponent

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {CountryDataService} from "./country-search-engine/services/country-data.service";
 import {CountrySearchEngineModule} from "./country-search-engine/country-search-engine.module";
 import {GeneralModule} from "./general/general.module";
+import {HomeModule} from "./home/home.module";
 
 
 @NgModule({
@@ -17,9 +18,10 @@ import {GeneralModule} from "./general/general.module";
     BrowserModule,
     FormsModule,
     CountrySearchEngineModule,
-    GeneralModule
+    GeneralModule,
+    HomeModule
   ],
   providers: [HttpClientModule, CountryDataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
