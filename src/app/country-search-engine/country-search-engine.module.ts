@@ -26,5 +26,4 @@ import {AppComponent} from "../app.component";
   providers: [HttpClientModule, CountryDataService],
   bootstrap: [AppComponent]
 })
-
 export class CountrySearchEngineModule{}
