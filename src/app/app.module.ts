@@ -15,7 +15,6 @@ import {CountrySearchEngineModule} from "./country-search-engine/country-search-
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     CountrySearchEngineModule
   ],
   providers: [HttpClientModule, CountryDataService],

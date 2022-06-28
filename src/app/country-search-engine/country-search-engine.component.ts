@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+
 import {CountryDataService} from "./services/country-data.service";
 import {CountryElement} from "./interfaces/country-element-interface";
 
@@ -24,17 +25,8 @@ export class CountrySearchEngineComponent implements OnInit {
       })
   }
 
-  private getFilteredCountries(searchString: string ){
-    return this.allCountries.filter(elem => elem.name.toLowerCase().includes(searchString.toLowerCase()));
-  }
-
   onSubmitted(): void{
     this.redirectToGoogle();
-  }
-
-  private redirectToGoogle(){
-    const searchRedirectUrlWithQuery = this.urlFragment + this.inputValue;
-    window.location.href = searchRedirectUrlWithQuery;
   }
 
   onSearchBarInputChanged(searchString: string ){
@@ -45,5 +37,14 @@ export class CountrySearchEngineComponent implements OnInit {
   onAutoCompleteElementsSelected(labelElement: string): void{
     this.inputValue = labelElement;
     this.redirectToGoogle();
+  }
+
+  private getFilteredCountries(searchString: string ){
+    return this.allCountries.filter(elem => elem.name.toLowerCase().includes(searchString.toLowerCase()));
+  }
+
+  private redirectToGoogle(){
+    const searchRedirectUrlWithQuery = this.urlFragment + this.inputValue;
+    window.location.href = searchRedirectUrlWithQuery;
   }
 }
