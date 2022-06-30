@@ -9,13 +9,13 @@ export class SearchInputComponent {
   @Input() inputValue!: string;
   @Input() filteredCountries!: any;
   @Output() searchBarChanged = new EventEmitter<string>();
-  @Output() submit = new EventEmitter<any>();
+  @Output() submitEvent = new EventEmitter<unknown>();
 
   onChangesSearchBarInput(searchString: string) {
     this.searchBarChanged.emit(searchString);
   }
 
   onSubmit(): void{
-    this.submit.emit();
+    this.submitEvent.emit();
   }
 }
