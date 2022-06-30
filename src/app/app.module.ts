@@ -9,11 +9,13 @@ import {CountrySearchEngineModule} from "./country-search-engine/country-search-
 import {GeneralModule} from "./general/general.module";
 import {HomeModule} from "./home/home.module";
 import {AppRoutingModule} from "./app-routing.module";
+import { CreateUserComponent } from './create-user/components/create-user/create-user.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

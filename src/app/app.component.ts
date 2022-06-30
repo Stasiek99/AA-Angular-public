@@ -18,4 +18,8 @@ export class AppComponent {
   goToSearchBar() {
     this.router.navigate(["/", "search-bar"]);
   }
+
+  goToCreateUser() {
+    this.router.navigate(["/", "create-new-user"]);
+  }
 }
