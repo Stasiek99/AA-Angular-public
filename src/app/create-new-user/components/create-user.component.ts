@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NgForm} from "@angular/forms";
 
 @Component({
@@ -7,8 +7,9 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./create-user.component.scss']
 })
 export class CreateUserComponent {
+  @ViewChild("f") userDataForm!: NgForm;
 
-  onSubmit(form: NgForm){
-    console.log(form.value);
+  onSubmit() {
+    return this.userDataForm.value;
   }
 }

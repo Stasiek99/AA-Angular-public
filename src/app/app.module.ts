@@ -14,7 +14,7 @@ import {CreateNewUserModule} from "./create-new-user/create-new-user.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
