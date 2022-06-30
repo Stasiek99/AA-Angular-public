@@ -7,12 +7,7 @@ import {NgForm} from '@angular/forms'
   styleUrls: ['./create-user.component.scss']
 })
 export class CreateUserComponent{
-  onSubmit(form: NgForm){
-    if (form.name==="password"){
-      console.log("");
-    }
-    else {
+  onSubmit(form: NgForm) {
     console.log(form.value);
-    }
   }
 }
