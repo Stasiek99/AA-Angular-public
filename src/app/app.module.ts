@@ -11,6 +11,7 @@ import {GeneralModule} from "./general/general.module";
 import {HomeModule} from "./home/home.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {CreateNewUserModule} from "./create-new-user/create-new-user.module";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {CreateNewUserModule} from "./create-new-user/create-new-user.module";
     AppRoutingModule,
     CreateNewUserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [HttpClientModule, CountryDataService],
   bootstrap: [AppComponent]
