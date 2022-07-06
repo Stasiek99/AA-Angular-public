@@ -2,7 +2,8 @@ import {NgModule} from "@angular/core";
 
 import {HeaderComponent} from "./components/header/header.component";
 import {FooterComponent} from "./components/footer/footer.component";
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {UserPresentationModule} from "../user-presentation/user-presentation.module";
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     FooterComponent,
     PageNotFoundComponent
   ],
+  imports: [UserPresentationModule],
   exports: [
     HeaderComponent,
     FooterComponent

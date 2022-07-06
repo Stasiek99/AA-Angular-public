@@ -7,8 +7,7 @@ import {CountryElement} from "../interfaces/country-element-interface";
 export class CountryDataService{
   private readonly jsonURL = "assets/countries.json";
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   httpGetData(){
     return this.http.get<CountryElement[]>(this.jsonURL);

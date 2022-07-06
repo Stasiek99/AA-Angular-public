@@ -9,13 +9,12 @@ import {CountrySearchEngineModule} from "./country-search-engine/country-search-
 import {GeneralModule} from "./general/general.module";
 import {HomeModule} from "./home/home.module";
 import {AppRoutingModule} from "./app-routing.module";
-import { CreateUserComponent } from './create-user/components/create-user/create-user.component';
+import {CreateNewUserModule} from "./create-new-user/create-new-user.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateUserComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +22,8 @@ import { CreateUserComponent } from './create-user/components/create-user/create
     CountrySearchEngineModule,
     GeneralModule,
     HomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CreateNewUserModule
   ],
   providers: [HttpClientModule, CountryDataService],
   bootstrap: [AppComponent]
