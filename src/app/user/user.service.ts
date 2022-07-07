@@ -12,7 +12,7 @@ export class UserService {
    this.createdUser = user;
   }
 
-  getUser(){
+  getUser(): UserInterface | null{
     return this.createdUser;
   }
 }
