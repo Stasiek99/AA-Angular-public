@@ -1,27 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
         <div id="user-data">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" ngModel name="name">
+            <input type="text" id="name" class="form-control" ngModel name="name" required>
           </div>
           <div class="form-group">
             <label for="login">Login</label>
-            <input type="text" id="login" class="form-control" ngModel name="login">
+            <input type="text" id="login" class="form-control" ngModel name="login" required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" ngModel name="password">
+            <input type="password" id="password" class="form-control" ngModel name="password" required>
           </div>
           <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" id="country" class="form-control" ngModel name="country">
+            <input type="text" id="country" class="form-control" ngModel name="country" required>
           </div>
           <div class="form-group">
             <label for="age">Age</label>
-            <input type="number" id="age" class="form-control" min="1" max="130" ngModel name="age">
+            <input type="number" id="age" class="form-control" ngModel name="age" required>
           </div>
         </div>
         <button class="btn btn-primary" type="submit">Submit</button>
