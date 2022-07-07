@@ -18,7 +18,6 @@ export class CreateNewUserComponent {
     const value = this.userDataForm.value;
     this.userService.setUser(value);
     this.redirectToUserPresentation()
-    return this.userDataForm.value;
   }
 
   redirectToUserPresentation(){

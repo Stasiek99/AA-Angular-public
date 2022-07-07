@@ -1,11 +1,11 @@
 import {NgModule} from "@angular/core";
 
 import {UserPresentationComponent} from "./components/user-presentation.component";
-import {BrowserModule} from "@angular/platform-browser";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [UserPresentationComponent],
-  imports: [BrowserModule],
+  imports: [CommonModule],
   exports: [UserPresentationComponent]
 })
 export class UserPresentationModule {}
