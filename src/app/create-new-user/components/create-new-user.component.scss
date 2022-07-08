@@ -1,3 +1,25 @@
-input.ng-invalid.ng-touched {
-  border: 1px solid red;
+.form-group{
+  padding: 20px;
 }
+.mat-form{
+  border: 1px;
+}
+.mat-raised-button{
+  background-color: #2F3C7E;
+  color: #FBEAEB;
+  max-height: 50px;
+  border-radius: 8px;
+}
+.submit-button{
+  position: center;
+  top: 50%;
+  transform: translateY(+43%);
+}
+//ul li button{
+//  color: #2F3C7E;
+//  background-color: #FBEAEB;
+//  padding: 5px;
+//}
+//.mat-raised-button{
+//  max-height: 25px;
+//}

@@ -5,32 +5,32 @@
         <div fxLayout="column" fxLayoutGap="40px">
           <div id="user-data">
             <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
-              <div class="form-group" fxFlex fxLayoutAlign="center">
-                  <label for="name">Name</label>
-                  <input matInput type="text" id="name" class="form-control" ngModel name="name" required>
-              </div>
-              <div class="form-group" fxFlex fxLayoutAlign="center">
+              <mat-form-field class="form-group" fxFlex fxLayoutAlign="center">
+                <label for="name">Name</label>
+                <input matInput type="text" id="name" class="form-control" ngModel name="name" required>
+              </mat-form-field>
+              <mat-form-field class="form-group" fxFlex fxLayoutAlign="center">
                 <label for="login">Login</label>
                 <input matInput type="text" id="login" class="form-control" ngModel name="login" required>
-              </div>
+              </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
-              <div class="form-group" fxFlex fxLayoutAlign="center">
+              <mat-form-field class="form-group" fxFlex fxLayoutAlign="center">
                 <label for="password">Password</label>
                 <input matInput type="password" id="password" class="form-control" ngModel name="password" required>
-              </div>
-              <div class="form-group" fxFlex fxLayoutAlign="center">
+              </mat-form-field>
+              <mat-form-field class="form-group" fxFlex fxLayoutAlign="center">
                 <label for="country">Country</label>
                 <input matInput type="text" id="country" class="form-control" ngModel name="country" required>
-              </div>
+              </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
-              <div class="form-group" fxFlex fxLayoutAlign="center">
+              <mat-form-field class="form-group" fxFlex fxLayoutAlign="center">
                 <label for="age">Age</label>
                 <input matInput type="number" id="age" class="form-control" ngModel name="age" required>
-              </div>
-              <div fxFlex fxLayoutAlign="center">
-                <button class="btn btn-primary" type="submit">Submit</button>
+              </mat-form-field>
+              <div class="submit-button" fxFlex fxLayoutAlign="center">
+                <button mat-raised-button type="submit">Submit</button>
               </div>
             </div>
           </div>

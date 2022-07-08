@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {FormControl, FormGroupDirective, NgForm, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {ErrorStateMatcher} from "@angular/material/core";
 
 import {UserService} from "../../user/user.service";
 
@@ -24,3 +25,14 @@ export class CreateNewUserComponent {
     this.router.navigate(["/", "user"]);
   }
 }
+// export class MyErrorStateMatcher implements ErrorStateMatcher{
+//   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+//     const isSubmitted = form && form.submitted;
+//     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+//   }
+// }
+// export class InputErrorStateMatcher{
+//   inputFormControl = new FormControl("", [Validators.required]);
+//
+//   matcher = new MyErrorStateMatcher();
+// }
