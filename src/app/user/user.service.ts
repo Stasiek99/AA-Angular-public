@@ -5,6 +5,7 @@ import {UserInterface} from "../user-presentation/interfaces/user-interface";
 @Injectable({
   providedIn: "root"
 })
+
 export class UserService {
   createdUser: UserInterface | null = null;
 

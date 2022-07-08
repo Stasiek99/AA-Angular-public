@@ -8,22 +8,5 @@ import {Router} from "@angular/router";
 })
 
 export class AppComponent {
-  constructor(private router: Router) {
-}
 
-  goToHome() {
-    this.router.navigate(["/", "home"]);
-  }
-
-  goToSearchBar() {
-    this.router.navigate(["/", "search-bar"]);
-  }
-
-  goToCreateUser() {
-    this.router.navigate(["/", "create-new-user"]);
-  }
-
-  goToUserPresentation() {
-    this.router.navigate(["/", "user"]);
-  }
 }

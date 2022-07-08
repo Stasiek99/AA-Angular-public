@@ -1,12 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-  margin: 10px;
-  box-sizing: border-box;
-  padding: 10px;
-}
-body{
-  font-family: "JetBrains Mono Medium", sans-serif;
-}
+//*{
+// margin: 0;
+////  box-sizing: border-box;
+////  padding: 10px;
+//}
+
 button{
   font-size: 100%;
   font-family: inherit;
@@ -24,5 +22,18 @@ select{
   font-family: inherit;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; width:100%; }
+body{
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.red {
+  border: 1px solid red;
+}
+
+div, ul, p, li, {
+  margin: 0;
+}

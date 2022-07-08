@@ -1,9 +1,5 @@
-ul li {
-  display: inline-block;
-  width: 15%;
-}
-
-ul li button{
-  color: #2F3C7E;
-  background-color: #FBEAEB;
+.wrapper {
+  overflow: auto;
+  height: 100vh;
+  display: block;
 }
