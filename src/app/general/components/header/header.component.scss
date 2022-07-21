@@ -2,3 +2,17 @@ h3{
   background-color: #ffdead ;
   width: 100%;
 }
+
+ul li {
+  padding: 5px 30px;
+  color: #2F3C7E;
+}
+ul li button {
+  color: #2F3C7E;
+  background-color: #FBEAEB;
+}
+.nav {
+  flex-wrap: wrap;
+  list-style-type: none;
+
+}

@@ -12,6 +12,7 @@ import {HomeModule} from "./home/home.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {CreateNewUserModule} from "./create-new-user/create-new-user.module";
 import {MatButtonModule} from "@angular/material/button";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatButtonModule} from "@angular/material/button";
     CountrySearchEngineModule,
     GeneralModule,
     HomeModule,
+      FlexLayoutModule,
     AppRoutingModule,
     CreateNewUserModule,
     BrowserAnimationsModule,
