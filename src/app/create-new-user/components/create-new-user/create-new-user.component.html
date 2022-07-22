@@ -1,7 +1,7 @@
   <div class="userdata">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="openDialog()" #f="ngForm">
-        <div class="divcss" fxLayout="column" fxLayoutGap="50px">
+        <div class="divcss" ngModelGroup="userData" fxLayout="column" fxLayoutGap="50px">
             <div fxLayout="row" fxLayoutGap="50px" fxLayout.xs="column">
               <mat-form-field appearance="outline" fxFlex fxLayoutAlign="center">
                 <mat-label>Name</mat-label>

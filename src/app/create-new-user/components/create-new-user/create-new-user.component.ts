@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, ViewChild, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
@@ -17,6 +17,24 @@ export class CreateNewUserComponent {
 
   constructor(private dialog: MatDialog, private router: Router, private userService: UserService) {}
 
+  // ngOnInit(): void{
+  //   let localStorageUserData = window.localStorage["User"];
+  //
+  //   if(localStorageUserData!==null){
+  //     for(let key in localStorageUserData){
+  //         this.userDataForm.querySelector()
+  //       this.userDataForm.form.patchValue({
+  //         userData: {
+  //           name: {},
+  //           login: {},
+  //           country: {},
+  //           age: {},
+  //         }
+  //       });
+  //     }
+  //   }
+  // }
+
   openDialog(): void {
    let dialogRef = this.dialog.open(DialogCreateUserComponent, {
       data: this.userDataForm,
@@ -29,7 +47,6 @@ export class CreateNewUserComponent {
            this.userService.setUser(this.passedValues);
            this.redirectToUserPresentation();
        }
-
    });
   }
 
