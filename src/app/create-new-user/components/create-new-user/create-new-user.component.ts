@@ -5,6 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 
 import {DialogCreateUserComponent} from "../dialog-create-user/dialog-create-user.component";
 import {UserService} from "../../../user/user.service";
+import {UserLocalStorageService} from "../../../user/user-local-storage.service";
 
 @Component({
   selector: 'app-create-new-user',
@@ -13,19 +14,21 @@ import {UserService} from "../../../user/user.service";
 })
 export class CreateNewUserComponent {
   @ViewChild("f") userDataForm!: NgForm;
+  @ViewChild("form") form: any
   passedValues: any;
 
-  constructor(private dialog: MatDialog, private router: Router, private userService: UserService) {}
+  constructor(private dialog: MatDialog, private router: Router, private userService: UserService, private userLocalStorageService: UserLocalStorageService) {}
 
   // ngOnInit(): void{
   //   let localStorageUserData = window.localStorage["User"];
+  //   localStorageUserData = JSON.parse(localStorageUserData);
   //
   //   if(localStorageUserData!==null){
   //     for(let key in localStorageUserData){
-  //         this.userDataForm.querySelector()
+  //        this.form.querySelector("[name='"+ key + "']").value = localStorageUserData[key];
   //       this.userDataForm.form.patchValue({
   //         userData: {
-  //           name: {},
+  //           name: {localStorageUserData},
   //           login: {},
   //           country: {},
   //           age: {},
@@ -44,7 +47,7 @@ export class CreateNewUserComponent {
    dialogRef.afterClosed().subscribe(result => {
        if(result){
            this.passedValues = result.value;
-           this.userService.setUser(this.passedValues);
+           this.userLocalStorageService.setUser(this.passedValues);
            this.redirectToUserPresentation();
        }
    });

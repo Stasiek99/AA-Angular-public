@@ -14,7 +14,6 @@ import {CreateNewUserModule} from "./create-new-user/create-new-user.module";
 import {MatButtonModule} from "@angular/material/button";
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CountrySearchEngineModule,
     GeneralModule,
     HomeModule,
-      FlexLayoutModule,
+    FlexLayoutModule,
     AppRoutingModule,
     CreateNewUserModule,
     BrowserAnimationsModule,

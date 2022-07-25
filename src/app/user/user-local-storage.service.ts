@@ -11,11 +11,7 @@ export class UserLocalStorageService {
 
   setUser(user: UserInterface) {
     this.createdUser = user;
-    this.saveToLocalStorage();
-  }
-
-  saveToLocalStorage(){
-    window.localStorage.setItem("User", JSON.stringify(this.createdUser))
+    window.localStorage.setItem("User", JSON.stringify(user))
   }
 
   getUser(): UserInterface | null{
