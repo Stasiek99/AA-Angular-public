@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+
+import {UserInterface} from "../../user-presentation/interfaces/user-interface";
 
 @Component({
-  selector: 'app-shared-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  selector: 'app-user-form',
+  templateUrl: 'user-form.component.html',
+  styleUrls: ['user-form.component.scss']
 })
-export class UserFormComponent implements OnInit {
+export class UserFormComponent {
+  @Output() editUser = new EventEmitter<UserInterface>();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onEditUser(editedUser: any){
+    this.editUser.emit(editedUser);
   }
-
 }

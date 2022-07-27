@@ -1,33 +1,3 @@
-<form  #f="ngForm" class="form">
-  <div class="divcss" fxLayout="column" fxLayoutGap="50px">
-    <div fxLayout="row" fxLayoutGap="50px" fxLayout.xs="column">
-      <mat-form-field appearance="outline" fxFlex fxLayoutAlign="center">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" ngModel name="name" required>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="form-group" fxFlex fxLayoutAlign="center">
-        <mat-label>Login</mat-label>
-        <input matInput placeholder="Login" type="text" id="login" class="form-control" ngModel name="login" required>
-      </mat-form-field>
-    </div>
-    <div fxLayout="row" fxLayoutGap="50px" fxLayout.xs="column">
-      <mat-form-field appearance="outline" class="form-group" fxFlex fxLayoutAlign="center">
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" type="password" id="password" class="form-control" ngModel name="password" required>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="form-group" fxFlex fxLayoutAlign="center">
-        <mat-label>Country</mat-label>
-        <input matInput placeholder="Country" type="text" id="country" class="form-control" ngModel name="country" required>
-      </mat-form-field>
-    </div>
-    <div fxLayout="row" fxLayoutGap="50px" fxLayout.xs="column">
-      <mat-form-field appearance="outline" class="form-group" fxFlex fxLayoutAlign="center">
-        <mat-label>Age</mat-label>
-        <input matInput placeholder="Age" type="number" id="age" class="form-control" ngModel name="age" required>
-      </mat-form-field>
-      <div class="submit-button" fxFlex fxLayoutGap="50px" fxLayoutAlign="center">
-        <button mat-raised-button [disabled]="!f.valid">Submit</button>
-      </div>
-    </div>
-  </div>
-</form>
+<h1>Edit User</h1>
+<app-user-form (editUser)="editUser($event)">
+</app-user-form>
