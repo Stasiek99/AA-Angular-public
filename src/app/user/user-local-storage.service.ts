@@ -1,15 +1,12 @@
 import {Injectable} from "@angular/core";
 
 import {UserInterface} from "../user-presentation/interfaces/user-interface";
-import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: "root"
 })
 
 export class UserLocalStorageService {
-  constructor(private router: Router) {
-  }
   private readonly localStorageKey = "User"
 
   setUser(user: UserInterface) {
@@ -33,6 +30,5 @@ export class UserLocalStorageService {
 
   editUser(editedUser: UserInterface){
     window.localStorage.setItem(this.localStorageKey, JSON.stringify(editedUser));
-    this.router.navigate(["/", "user"]);
   }
 }
