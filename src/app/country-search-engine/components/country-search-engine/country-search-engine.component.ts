@@ -27,6 +27,8 @@ export class CountrySearchEngineComponent implements OnInit {
   }
 
   onSubmitted(): void{
+    this.countrySearchService.onSubmitted(this.inputValue);
+    console.log(this.inputValue);
     this.redirectToGoogle();
   }
 
@@ -38,6 +40,7 @@ export class CountrySearchEngineComponent implements OnInit {
   onAutoCompleteElementsSelected(labelElement: string): void{
     this.inputValue = labelElement;
     this.countrySearchService.onSubmitted(this.inputValue);
+    console.log(this.inputValue);
     this.redirectToGoogle();
   }
 
@@ -47,7 +50,6 @@ export class CountrySearchEngineComponent implements OnInit {
 
   private redirectToGoogle(){
     const searchRedirectUrlWithQuery = this.urlFragment + this.inputValue;
-    this.countrySearchService.onSubmitted(this.inputValue);
     window.location.href = searchRedirectUrlWithQuery;
   }
 }

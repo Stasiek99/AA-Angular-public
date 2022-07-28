@@ -7,6 +7,7 @@ import { CountrySearchEngineComponent } from './components/country-search-engine
 import {SearchInputComponent} from "./components/search-input/search-input.component";
 import {SearchAutocompleteComponent} from "./components/search-autocomplete/search-autocomplete.component";
 import {CountryDataService} from "./services/country-data.service";
+import {CountrySearchService} from "./services/country-search.service";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,6 @@ import {CountryDataService} from "./services/country-data.service";
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpClientModule, CountryDataService]
+  providers: [HttpClientModule, CountryDataService, CountrySearchService]
 })
 export class CountrySearchEngineModule{}

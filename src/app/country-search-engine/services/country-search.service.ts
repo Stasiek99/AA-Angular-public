@@ -4,9 +4,7 @@ import {CountrySearchedInterface} from "../interfaces/country-searched.interface
 
 @Injectable()
 export class CountrySearchService{
-
-
-  private countriesSearchedList: CountrySearchedInterface[] | any = [];
+  private countriesSearchedList: CountrySearchedInterface[] = [];
   private uniqueSearchedCountry: CountrySearchedInterface | undefined;
   private readonly date = new Date();
   private readonly isoDate = this.date.toISOString();
@@ -18,6 +16,6 @@ export class CountrySearchService{
       date: this.isoDate
     }
     this.countriesSearchedList.push(this.uniqueSearchedCountry);
-    window.localStorage.setItem("List of searched Countries", this.countriesSearchedList.JSON.stringify());
+    window.localStorage.setItem("List of searched Countries", JSON.stringify(this.countriesSearchedList));
   }
 }
