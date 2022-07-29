@@ -14,8 +14,8 @@ export class UserLocalStorageService {
   }
 
   getUser(): UserInterface | null{
-    const localStorageFields = window.localStorage[this.localStorageKey];
-    return JSON.parse(localStorageFields);
+    const localStorageValue = window.localStorage[this.localStorageKey];
+    return JSON.parse(localStorageValue);
   }
 
   deleteUser(){

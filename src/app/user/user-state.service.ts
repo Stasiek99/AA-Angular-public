@@ -9,7 +9,7 @@ import {UserLocalStorageService} from "./user-local-storage.service";
 
 export class UserStateService {
   constructor(private userLocalStorageService: UserLocalStorageService) {}
-  createdUser: UserInterface | null = null;
+  private createdUser: UserInterface | null = this.userLocalStorageService.getUser()
 
   setUser(user: UserInterface){
    this.createdUser = user;
@@ -17,15 +17,11 @@ export class UserStateService {
   }
 
   getUser(): UserInterface | null{
-    if(this.userLocalStorageService.getUser()){
-      return this.userLocalStorageService.getUser();
-    }
-    else {
       return this.createdUser;
-    }
   }
 
   deleteUser(){
+    this.createdUser = null;
     this.userLocalStorageService.deleteUser();
   }
 
