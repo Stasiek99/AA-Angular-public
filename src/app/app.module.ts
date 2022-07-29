@@ -25,7 +25,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CountrySearchEngineModule,
     GeneralModule,
     HomeModule,
-      FlexLayoutModule,
+    FlexLayoutModule,
     AppRoutingModule,
     CreateNewUserModule,
     BrowserAnimationsModule,

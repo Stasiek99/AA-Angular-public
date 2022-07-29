@@ -3,7 +3,8 @@ import {HttpClient} from "@angular/common/http";
 
 import {CountryDataService} from "../../services/country-data.service";
 import {CountryElement} from "../../interfaces/country-element-interface";
-import {CountrySearchService} from "../../services/country-search.service";
+import {CountrySearchStateService} from "../../services/country-search-state.service";
+import {CountrySearchedInterface} from "../../interfaces/country-searched.interface";
 
 @Component({
   selector: 'app-country-search-engine',
@@ -15,8 +16,15 @@ export class CountrySearchEngineComponent implements OnInit {
   allCountries: CountryElement[] = [];
   filteredCountries: CountryElement[] = [];
   private readonly urlFragment = "https://www.google.com/search?q=";
+  private readonly date = new Date();
+  private readonly isoDate = this.date.toISOString();
 
-  constructor(private http: HttpClient, private countryDataService: CountryDataService, private countrySearchService: CountrySearchService) {
+  private uniqueSearchedCountry: CountrySearchedInterface= {
+    input: this.inputValue,
+    date: this.isoDate
+  };
+
+  constructor(private http: HttpClient, private countryDataService: CountryDataService, private countrySearchService: CountrySearchStateService) {
   }
 
   ngOnInit(): void {
@@ -27,20 +35,20 @@ export class CountrySearchEngineComponent implements OnInit {
   }
 
   onSubmitted(): void{
-    this.countrySearchService.onSubmitted(this.inputValue);
-    console.log(this.inputValue);
+    this.countrySearchService.onSubmitted(this.uniqueSearchedCountry);
     this.redirectToGoogle();
   }
 
   onSearchBarInputChanged(searchString: string ){
     this.inputValue = searchString;
+    this.uniqueSearchedCountry.input = this.inputValue;
     this.filteredCountries = this.getFilteredCountries(searchString);
   }
 
   onAutoCompleteElementsSelected(labelElement: string): void{
     this.inputValue = labelElement;
-    this.countrySearchService.onSubmitted(this.inputValue);
-    console.log(this.inputValue);
+    this.uniqueSearchedCountry.input = this.inputValue
+    this.countrySearchService.onSubmitted(this.uniqueSearchedCountry);
     this.redirectToGoogle();
   }
 
