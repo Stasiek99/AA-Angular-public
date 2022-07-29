@@ -5,8 +5,9 @@ import {CountrySearchLocalStorageService} from "./country-search-local-storage.s
 
 @Injectable()
 export class CountrySearchStateService {
-  constructor(private countrySearchLocalStorageService: CountrySearchLocalStorageService,
-              private localStorageValue: CountrySearchedInterface[] = countrySearchLocalStorageService.getData()){}
+  localStorageValue: CountrySearchedInterface[]
+  constructor(private countrySearchLocalStorageService: CountrySearchLocalStorageService)
+              {this.localStorageValue = this.countrySearchLocalStorageService.getData()}
 
   onSubmitted(searchInput: CountrySearchedInterface){
     this.localStorageValue.push(searchInput);
