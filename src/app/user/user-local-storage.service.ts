@@ -14,18 +14,12 @@ export class UserLocalStorageService {
   }
 
   getUser(): UserInterface | null{
-    if (this.localStorageKey){
-      const localStorageFields = window.localStorage[this.localStorageKey];
-      return JSON.parse(localStorageFields);
-    }
-    else {
-      return null;
-    }
+    const localStorageFields = window.localStorage[this.localStorageKey];
+    return JSON.parse(localStorageFields);
   }
 
   deleteUser(){
     window.localStorage.removeItem(this.localStorageKey);
-    history.go(0);
   }
 
   editUser(editedUser: UserInterface){

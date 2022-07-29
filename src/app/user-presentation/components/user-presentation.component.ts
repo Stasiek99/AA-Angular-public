@@ -24,6 +24,9 @@ export class UserPresentationComponent implements OnInit{
 
   deleteUser(){
     this.userService.deleteUser();
+    this.router.navigateByUrl("/", { skipLocationChange: true }).then(() => {
+      this.router.navigate(["/", "user"]);
+    });
   }
 
   redirectToEditUser(){

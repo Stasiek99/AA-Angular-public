@@ -12,7 +12,7 @@ export class UserFormComponent {
   @Output() editUser = new EventEmitter<UserInterface>();
   constructor(private router: Router) {}
 
-  onEditUser(editedUser: any){
+  onEditUser(editedUser: UserInterface){
     console.log(editedUser)
     this.editUser.emit(editedUser);
     this.redirectToUserPresentation();
