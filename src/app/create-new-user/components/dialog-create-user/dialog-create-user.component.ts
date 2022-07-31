@@ -1,7 +1,5 @@
-import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-
-import {UserInterface} from "../../../user-presentation/interfaces/user-interface";
+import {Component} from '@angular/core';
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-dialog-create-user',
@@ -9,9 +7,7 @@ import {UserInterface} from "../../../user-presentation/interfaces/user-interfac
   styleUrls: ['./dialog-create-user.component.scss']
 })
 export class DialogCreateUserComponent {
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: UserInterface,
-    private matDialogRef: MatDialogRef<DialogCreateUserComponent>) {}
+  constructor(private matDialogRef: MatDialogRef<DialogCreateUserComponent>) {}
 
   onCloseClick(): void{
     this.matDialogRef.close();

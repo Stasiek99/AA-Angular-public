@@ -8,5 +8,9 @@
       <p>Name of your country: <b>{{user.country}}</b></p>
       <p>Your age: <b>{{user.age}}</b></p>
     </div>
+    <div fxLayout="row" fxLayoutGap="30px" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center">
+      <button mat-raised-button *ngIf="this.isButtonVisible" (click)="deleteUser()">Delete User</button>
+      <button mat-raised-button *ngIf="this.isButtonVisible" (click)="redirectToEditUser()">Edit User</button>
+    </div>
   </div>
 </ng-container>

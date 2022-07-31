@@ -13,7 +13,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {CreateNewUserModule} from "./create-new-user/create-new-user.module";
 import {MatButtonModule} from "@angular/material/button";
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import {SharedModule} from "./shared/shared.module";
+import {EditUserModule} from "./edit-user/edit-user.module";
 
 @NgModule({
   declarations: [
@@ -25,11 +26,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CountrySearchEngineModule,
     GeneralModule,
     HomeModule,
-      FlexLayoutModule,
+    FlexLayoutModule,
     AppRoutingModule,
     CreateNewUserModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    SharedModule,
+    EditUserModule
   ],
   providers: [HttpClientModule, CountryDataService],
   bootstrap: [AppComponent]
