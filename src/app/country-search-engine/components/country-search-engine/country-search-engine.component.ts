@@ -16,13 +16,6 @@ export class CountrySearchEngineComponent implements OnInit {
   allCountries: CountryElement[] = [];
   filteredCountries: CountryElement[] = [];
   private readonly urlFragment = "https://www.google.com/search?q=";
-  private readonly date = new Date();
-  private readonly isoDate = this.date.toISOString();
-
-  private uniqueSearchedCountry: CountrySearchedInterface= {
-    input: this.inputValue,
-    date: this.isoDate
-  };
 
   constructor(private http: HttpClient, private countryDataService: CountryDataService, private countrySearchService: CountrySearchStateService) {
   }
@@ -35,25 +28,31 @@ export class CountrySearchEngineComponent implements OnInit {
   }
 
   onSubmitted(): void{
-    this.countrySearchService.onSubmitted(this.uniqueSearchedCountry);
+    const tmp = this.createUniqueSearchedCountry(this.inputValue);
+    this.countrySearchService.onSubmitted(tmp);
     this.redirectToGoogle();
   }
 
   onSearchBarInputChanged(searchString: string ){
     this.inputValue = searchString;
-    this.uniqueSearchedCountry.input = this.inputValue;
     this.filteredCountries = this.getFilteredCountries(searchString);
   }
 
   onAutoCompleteElementsSelected(labelElement: string): void{
     this.inputValue = labelElement;
-    this.uniqueSearchedCountry.input = this.inputValue
-    this.countrySearchService.onSubmitted(this.uniqueSearchedCountry);
+    const tmp = this.createUniqueSearchedCountry(this.inputValue);
+    this.countrySearchService.onSubmitted(tmp);
     this.redirectToGoogle();
   }
 
   private getFilteredCountries(searchString: string ){
     return this.allCountries.filter(elem => elem.name.toLowerCase().includes(searchString.toLowerCase()));
+  }
+  private createUniqueSearchedCountry(input: string): CountrySearchedInterface {
+    return {
+      input,
+      date: (new Date()).toISOString()
+    };
   }
 
   private redirectToGoogle(){

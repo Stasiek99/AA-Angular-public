@@ -9,8 +9,8 @@ export class CountrySearchLocalStorageService{
     window.localStorage.setItem(this.countriesStorageItemKey, JSON.stringify(listOfSearchedCountries));
   }
 
-  getData(){
-    const objectToParse = window.localStorage.getItem(this.countriesStorageItemKey) as string;
-    return JSON.parse(objectToParse);
+  getData(): CountrySearchedInterface[] | null{
+    const objectToParse = window.localStorage.getItem(this.countriesStorageItemKey);
+    return objectToParse ? JSON.parse(objectToParse) : null
   }
 }
