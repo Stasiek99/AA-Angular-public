@@ -1,11 +1,18 @@
-<div class="wrapper" fxLayout="column">
-    <div class="header-wrapper">
-        <app-header></app-header>
+<mat-sidenav-container [autosize]="true">
+    <div class="wrapper" fxLayout="column">
+        <main fxFlex fxLayout="column">
+            <div class="header-wrapper">
+                <app-header (menuIconClicked)="onMenuIconClicked()"></app-header>
+            </div>
+            <div class="content-wrapper" fxFlex>
+                <router-outlet></router-outlet>
+            </div>
+            <div class="footer-wrapper">
+                <app-footer></app-footer>
+            </div>
+        </main>
     </div>
-    <main fxFlex>
-        <router-outlet></router-outlet>
-    </main>
-    <div class="footer-wrapper">
-        <app-footer></app-footer>
-    </div>
-</div>
+    <mat-sidenav #sidenav class="nav" [opened]="false" [fixedInViewport]="true">
+        <app-sidenav (sidenavRoute)="onSelectLink($event)"></app-sidenav>
+    </mat-sidenav>
+</mat-sidenav-container>

@@ -11,12 +11,15 @@ import {MatIconModule} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonModule} from "@angular/material/button";
 import {SharedModule} from "../shared/shared.module";
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SidenavComponent
   ],
   imports: [
     UserPresentationModule,
@@ -30,7 +33,8 @@ import {SharedModule} from "../shared/shared.module";
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidenavComponent
   ]
 })
 export class GeneralModule{}

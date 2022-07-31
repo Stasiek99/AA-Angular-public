@@ -15,6 +15,8 @@ import {MatButtonModule} from "@angular/material/button";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {SharedModule} from "./shared/shared.module";
 import {EditUserModule} from "./edit-user/edit-user.module";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {EditUserModule} from "./edit-user/edit-user.module";
     BrowserAnimationsModule,
     MatButtonModule,
     SharedModule,
-    EditUserModule
+    EditUserModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [HttpClientModule, CountryDataService],
   bootstrap: [AppComponent]
