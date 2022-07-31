@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 
 import {CountryDataService} from "../../services/country-data.service";
 import {CountryElement} from "../../interfaces/country-element-interface";
+import {CountrySearchStateService} from "../../services/country-search-state.service";
+import {CountrySearchedInterface} from "../../interfaces/country-searched.interface";
 
 @Component({
   selector: 'app-country-search-engine',
@@ -15,7 +17,7 @@ export class CountrySearchEngineComponent implements OnInit {
   filteredCountries: CountryElement[] = [];
   private readonly urlFragment = "https://www.google.com/search?q=";
 
-  constructor(private http: HttpClient, private countryDataService: CountryDataService) {
+  constructor(private http: HttpClient, private countryDataService: CountryDataService, private countrySearchService: CountrySearchStateService) {
   }
 
   ngOnInit(): void {
@@ -26,6 +28,8 @@ export class CountrySearchEngineComponent implements OnInit {
   }
 
   onSubmitted(): void{
+    const tmp = this.createUniqueSearchedCountry(this.inputValue);
+    this.countrySearchService.onSubmitted(tmp);
     this.redirectToGoogle();
   }
 
@@ -36,11 +40,19 @@ export class CountrySearchEngineComponent implements OnInit {
 
   onAutoCompleteElementsSelected(labelElement: string): void{
     this.inputValue = labelElement;
+    const tmp = this.createUniqueSearchedCountry(this.inputValue);
+    this.countrySearchService.onSubmitted(tmp);
     this.redirectToGoogle();
   }
 
   private getFilteredCountries(searchString: string ){
     return this.allCountries.filter(elem => elem.name.toLowerCase().includes(searchString.toLowerCase()));
+  }
+  private createUniqueSearchedCountry(input: string): CountrySearchedInterface {
+    return {
+      input,
+      date: (new Date()).toISOString()
+    };
   }
 
   private redirectToGoogle(){
