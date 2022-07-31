@@ -1,30 +1,14 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+    @Output() menuIconClicked = new EventEmitter<void>();
 
-    constructor(private router: Router) {
+    onClickMenuIcon(): void {
+            this.menuIconClicked.emit()
     }
-
-    goToHome() {
-        this.router.navigate(["/", "home"]);
-    }
-
-    goToSearchBar() {
-        this.router.navigate(["/", "search-bar"]);
-    }
-
-    goToCreateUser() {
-        this.router.navigate(["/", "create-new-user"]);
-    }
-
-    goToUserPresentation() {
-        this.router.navigate(["/", "user"]);
-    }
-
 }

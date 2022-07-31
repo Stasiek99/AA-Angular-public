@@ -1,6 +1,39 @@
-h3{
-  background-color: #ffdead ;
-  width: 100%;
+header{
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  justify-content: center;
+  color: #2F3C7E;
+  font-size: 30px;
+  padding: 18px 24px;
+}
+a {
+  display: grid;
+  grid-column-start: 2;
+  text-decoration: none;
+  justify-content: center;
+
+}
+.app-title {
+  font-size:1.5rem;
+  justify-content: center;
+  left: 500vw;
+}
+.drawer {
+  color: #FBEAEB;
+  height: 100%;
+}
+
+ul li {
+  padding: 5px 30px;
+  color: #2F3C7E;
+}
+ul li button {
+  color: #2F3C7E;
+  background-color: #FBEAEB;
+}
+.nav {
+  flex-wrap: wrap;
+  list-style-type: none;
 }
 
 ul li {
@@ -15,4 +48,9 @@ ul li button {
   flex-wrap: wrap;
   list-style-type: none;
 
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
 }

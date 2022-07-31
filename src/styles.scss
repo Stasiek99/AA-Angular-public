@@ -22,16 +22,13 @@ select{
   font-family: inherit;
 }
 
-html, body { height: 100%; width:100%; }
+html, body { height: 100%; width:100%; font-size:14px; }
 body{
+
   padding: 0;
   position: relative;
   min-height: 100vh;
   margin: 0 auto;
-}
-
-.red {
-  border: 1px solid red;
 }
 
 div, ul, p, li, {

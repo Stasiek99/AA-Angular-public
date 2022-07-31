@@ -1,14 +1,10 @@
-<ul fxLayout="row" class="nav">
-    <li>
-        <button mat-raised-button><a (click)="goToHome()">Home</a></button>
-    </li>
-    <li>
-        <button mat-raised-button><a (click)="goToSearchBar()">Search Bar</a></button>
-    </li>
-    <li>
-        <button mat-raised-button><a (click)="goToCreateUser()">Create New User</a></button>
-    </li>
-    <li>
-        <button mat-raised-button><a (click)="goToUserPresentation()">User Data Preview</a></button>
-    </li>
-</ul>
+<header fxLayout="row">
+        <button mat-mini-fab color="#FBEAEB" (click)="onClickMenuIcon()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    <div fxFlex fxLayout="column" fxLayoutAlign="center">
+        <a routerLink="/">
+            <span class="app-title">Single Page Application</span>
+        </a>
+    </div>
+</header>
