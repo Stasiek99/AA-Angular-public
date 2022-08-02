@@ -9,12 +9,15 @@ import {SearchAutocompleteComponent} from "./components/search-autocomplete/sear
 import {CountryDataService} from "./services/country-data.service";
 import {CountrySearchStateService} from "./services/country-search-state.service";
 import {CountrySearchLocalStorageService} from "./services/country-search-local-storage.service";
+import { SearchHistoryComponent } from './components/search-history/search-history.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
     CountrySearchEngineComponent,
     SearchInputComponent,
     SearchAutocompleteComponent,
+    SearchHistoryComponent,
   ],
   exports: [
     CountrySearchEngineComponent
@@ -23,6 +26,7 @@ import {CountrySearchLocalStorageService} from "./services/country-search-local-
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatTableModule,
   ],
   providers: [HttpClientModule, CountryDataService, CountrySearchStateService, CountrySearchLocalStorageService]
 })
