@@ -13,11 +13,6 @@ export class UserLocalStorageService {
     window.localStorage.setItem(this.userStorageItemKey, JSON.stringify(usersValues))
   }
 
-  getLastAddedUser(): UserInterface | null{
-    const localStorageValue = window.localStorage[this.userStorageItemKey];
-    return localStorageValue ? JSON.parse(localStorageValue) : null
-  }
-
   getUsers(): UserInterface[] | null{
     const objectToParse = window.localStorage.getItem(this.userStorageItemKey);
     return objectToParse ? JSON.parse(objectToParse) : null;
