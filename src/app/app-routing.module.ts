@@ -7,6 +7,7 @@ import {PageNotFoundComponent} from "./general/components/page-not-found/page-no
 import {UserPresentationComponent} from "./user-presentation/components/user-presentation.component";
 import {CreateNewUserComponent} from "./create-new-user/components/create-new-user/create-new-user.component";
 import {EditUserComponent} from "./edit-user/components/edit-user.component";
+import {SearchHistoryComponent} from "./country-search-engine/components/search-history/search-history.component";
 
 export const routeConfig: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -15,6 +16,7 @@ export const routeConfig: Routes = [
   {path: "create-new-user", component: CreateNewUserComponent},
   {path: "user", component: UserPresentationComponent},
   {path: "edit-user", component: EditUserComponent},
+  {path: "search-history", component: SearchHistoryComponent},
   {path: "**", pathMatch: "full", component: PageNotFoundComponent}
 ];
 

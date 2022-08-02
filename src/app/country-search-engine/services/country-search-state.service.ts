@@ -16,4 +16,8 @@ export class CountrySearchStateService {
     this.localStorageValue.push(searchInput);
     this.countrySearchLocalStorageService.setItem(this.localStorageValue)
   }
+
+  onSearchHistoryComponentInitialized(){
+    return this.localStorageValue;
+  }
 }
