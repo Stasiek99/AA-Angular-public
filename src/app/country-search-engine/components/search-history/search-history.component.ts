@@ -11,17 +11,13 @@ import {CountrySearchedInterface} from "../../interfaces/country-searched.interf
 export class SearchHistoryComponent implements OnInit {
   constructor(private countrySearchStateService: CountrySearchStateService) { }
   localStorageValue: CountrySearchedInterface[] = [];
-  localStorageInputArr: string[] = [];
-  localStorageDateArr: string[] = [];
   displayedColumns: string[] = ["input", "date"];
   dataSource: CountrySearchedInterface[] = [];
 
   ngOnInit(): void {
     this.localStorageValue = this.countrySearchStateService.onSearchHistoryComponentInitialized()
     for(let i=0; i<this.localStorageValue.length; i++){
-      this.localStorageInputArr.push(this.localStorageValue[i].input);
-      this.localStorageDateArr.push(this.localStorageValue[i].date);
-      this.dataSource.push({input: this.localStorageInputArr[i], date: this.localStorageDateArr[i]});
+      this.dataSource.push({input: this.localStorageValue[i].input, date: this.localStorageValue[i].date});
     }
   }
 }
