@@ -12,6 +12,6 @@ export class EditUserComponent {
   constructor(private userService: UserStateService) {}
 
   editUser(editedUser: UserInterface){
-    this.userService.setUser(editedUser);
+    this.userService.editLastAddedUser(editedUser);
   }
 }

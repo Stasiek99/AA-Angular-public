@@ -8,25 +8,36 @@ import {UserLocalStorageService} from "./user-local-storage.service";
 })
 
 export class UserStateService {
-  constructor(private userLocalStorageService: UserLocalStorageService) {}
-  private createdUser: UserInterface | null = this.userLocalStorageService.getUser()
-
-  setUser(user: UserInterface){
-   this.createdUser = user;
-   this.userLocalStorageService.setUser(user)
+  localStorageValue: UserInterface[];
+  private readonly defaultValue = [];
+  constructor(private userLocalStorageService: UserLocalStorageService) {
+    const tmp = this.userLocalStorageService.getUsers();
+    this.localStorageValue = tmp ?? this.defaultValue;
   }
 
-  getUser(): UserInterface | null{
-      return this.createdUser;
+  addUser(user: UserInterface){
+    console.log(user);
+    console.log(this.localStorageValue)
+    this.localStorageValue.push(user);
+    this.userLocalStorageService.addUser(this.localStorageValue);
   }
 
-  deleteUser(){
-    this.createdUser = null;
-    this.userLocalStorageService.deleteUser();
+  getLastAddedUser(): UserInterface | null{
+    return this.localStorageValue[this.localStorageValue.length-1];
   }
 
-  editUser(editedUser: UserInterface){
-    this.createdUser = editedUser;
-    this.userLocalStorageService.editUser(editedUser);
+  deleteLastAddedUser(){
+    this.localStorageValue.pop();
+    this.userLocalStorageService.deleteLastAddedUser(this.localStorageValue);
+  }
+
+  editLastAddedUser(editedUser: UserInterface){
+    this.localStorageValue.pop();
+    this.localStorageValue.push(editedUser);
+    this.userLocalStorageService.editLastAddedUser(this.localStorageValue);
+  }
+
+  onUsersListComponentInitialized(){
+    return this.localStorageValue;
   }
 }

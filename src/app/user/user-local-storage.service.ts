@@ -7,22 +7,27 @@ import {UserInterface} from "../user-presentation/interfaces/user-interface";
 })
 
 export class UserLocalStorageService {
-  private readonly localStorageKey = "User"
+  private readonly userStorageItemKey = "List of Users"
 
-  setUser(user: UserInterface) {
-    window.localStorage.setItem(this.localStorageKey, JSON.stringify(user))
+  addUser(usersValues: UserInterface[]) {
+    window.localStorage.setItem(this.userStorageItemKey, JSON.stringify(usersValues))
   }
 
-  getUser(): UserInterface | null{
-    const localStorageValue = window.localStorage[this.localStorageKey];
+  getLastAddedUser(): UserInterface | null{
+    const localStorageValue = window.localStorage[this.userStorageItemKey];
     return localStorageValue ? JSON.parse(localStorageValue) : null
   }
 
-  deleteUser(){
-    window.localStorage.removeItem(this.localStorageKey);
+  getUsers(): UserInterface[] | null{
+    const objectToParse = window.localStorage.getItem(this.userStorageItemKey);
+    return objectToParse ? JSON.parse(objectToParse) : null;
   }
 
-  editUser(editedUser: UserInterface){
-    window.localStorage.setItem(this.localStorageKey, JSON.stringify(editedUser));
+  deleteLastAddedUser(newList: UserInterface[]){
+    window.localStorage.setItem(this.userStorageItemKey, JSON.stringify(newList));
+  }
+
+  editLastAddedUser(editedUser: UserInterface[]){
+    window.localStorage.setItem(this.userStorageItemKey, JSON.stringify(editedUser));
   }
 }
