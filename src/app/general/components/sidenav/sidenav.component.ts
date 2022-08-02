@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output, ViewChild} from "@angular/core";
+import {Component, EventEmitter, Output} from "@angular/core";
 
 import {SidenavNavigationType} from "../../enums/sidenav-navigation-type";
 

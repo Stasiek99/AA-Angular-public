@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
-import {UserInterface} from "../interfaces/user-interface";
-import {UserStateService} from "../../user/user-state.service";
+import {UserInterface} from "../../interfaces/user-interface";
+import {UserStateService} from "../../../user/user-state.service";
 import {Router} from "@angular/router";
 
 @Component({
