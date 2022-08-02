@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
-import {UserInterface} from "../interfaces/user-interface";
-import {UserStateService} from "../../user/user-state.service";
+import {UserInterface} from "../../interfaces/user-interface";
+import {UserStateService} from "../../../user/user-state.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -16,14 +16,14 @@ export class UserPresentationComponent implements OnInit{
   constructor(private userService: UserStateService, private router: Router) {}
 
   ngOnInit(){
-    this.user = this.userService.getUser() as UserInterface;
+    this.user = this.userService.getLastAddedUser() as UserInterface;
     if(this.user){
       this.isButtonVisible = true;
     }
   }
 
   deleteUser(){
-    this.userService.deleteUser();
+    this.userService.deleteLastAddedUser();
     this.router.navigateByUrl("/", { skipLocationChange: true }).then(() => {
       this.router.navigate(["/", "user"]);
     });

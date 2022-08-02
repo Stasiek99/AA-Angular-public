@@ -23,7 +23,7 @@ export class CreateNewUserComponent {
     });
    dialogRef.afterClosed().subscribe(result => {
        if(result){
-         this.userService.setUser(this.userDataForm.value);
+         this.userService.addUser(this.userDataForm.value);
          this.redirectToUserPresentation();
        }
    });
